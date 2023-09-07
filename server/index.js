@@ -6,11 +6,14 @@ const app = express();
 const port = process.env.PORT;
 const router = require('./Routers/AuthRoutes');
 
-app.use(cors({
-  origin: "https://netflix-clone-fro.vercel.app", // Remove square brackets
-  methods: ["POST", "GET"],
-  credentials: true
-}));
+// Allow requests from the specific origin
+const corsOptions = {
+  origin: "https://netflix-clone-fro.vercel.app",
+  methods: ["POST", "GET"], // Add the allowed HTTP methods
+  credentials: true, // If you need to send cookies, set this to true
+};
+
+app.use(cors(corsOptions));
 
 
 app.use(express.json());
