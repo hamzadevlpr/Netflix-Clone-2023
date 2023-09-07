@@ -8,13 +8,14 @@ const router = require('./Routers/AuthRoutes');
 
 app.use(cors(
   {
-    origin: ["https://netflix-clone-apii.vercel.app/"],
+    origin: ["https://netflix-clone-fro.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
   }
 ));
 app.use(express.json());
 app.use(router);
+
 app.get('/', (req, res) => {
   res.send("Deployed to Vercel")
 })
