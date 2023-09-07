@@ -15,7 +15,9 @@ app.use(cors(
 ));
 app.use(express.json());
 app.use(router);
-
+app.get('/', (req, res) => {
+  res.send("Deployed to Vercel")
+})
 
 // Connect to the MongoDB database
 const DATABASE_URL = process.env.DATABASE_URL;
