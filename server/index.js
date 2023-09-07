@@ -5,7 +5,14 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT;
 const router = require('./Routers/AuthRoutes');
-app.use(cors());
+
+app.use(cors(
+  {
+    origin: ["https://www.educative.io/"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 app.use(express.json());
 app.use(router);
 
