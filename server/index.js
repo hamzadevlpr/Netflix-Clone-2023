@@ -5,14 +5,21 @@ const cors = require("cors");
 const app = express();
 const router = require('./Routers/AuthRoutes');
 
-// Allow requests from the specific origin
-const corsOptions = {
-  origin: ["https://netflix-clone-fro.vercel.app"],
-  methods: ["POST", "GET"], // Add the allowed HTTP methods
-  credentials: true, // If you need to send cookies, set this to true
-};
+const allowedOrigins = ["https://netflix-clone-fro.vercel.app"];
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 
 app.use(express.json());
