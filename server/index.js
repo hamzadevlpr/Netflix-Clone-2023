@@ -3,12 +3,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT;
 const router = require('./Routers/AuthRoutes');
 
 // Allow requests from the specific origin
 const corsOptions = {
-  origin: "https://netflix-clone-fro.vercel.app",
+  origin: ["https://netflix-clone-fro.vercel.app"],
   methods: ["POST", "GET"], // Add the allowed HTTP methods
   credentials: true, // If you need to send cookies, set this to true
 };
@@ -39,6 +38,6 @@ database.once("open", () => {
   console.log("Database Connected");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(3001, () => {
+  console.log(`Server is running on port 3001`);
 });
