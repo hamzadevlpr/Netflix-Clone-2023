@@ -15,7 +15,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const url = "https://netflix-clone-apii.vercel.app/login";
+    const url = "https://netflix-clone-end.vercel.app/login";
     console.log({ email, password });
     axios
       .post(url, { email, password })
