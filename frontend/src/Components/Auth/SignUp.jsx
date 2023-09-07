@@ -19,7 +19,7 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const url = "http://localhost:2000/register";
+    const url = "https://netflix-clone-apii.vercel.app/register";
     console.log({ name, email, password });
 
     axios

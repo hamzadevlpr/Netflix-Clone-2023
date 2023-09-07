@@ -8,7 +8,7 @@ const router = require('./Routers/AuthRoutes');
 
 app.use(cors(
   {
-    origin: ["https://www.educative.io/"],
+    origin: ["https://netflix-clone-apii.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
   }
