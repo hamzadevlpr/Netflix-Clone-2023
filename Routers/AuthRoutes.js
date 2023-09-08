@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
             return res.status(400).json({ success: false, message: "Email already registered" });
         }
 
-        const newUser = new User({ name, email, password });
+        const newUser = new Usermodels({ name, email, password });
         await newUser.save();
 
         res.status(200).json({ success: true, message: "Sign Up Complete" });

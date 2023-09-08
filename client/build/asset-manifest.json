@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.93dea07b.css",
+    "main.js": "/static/js/main.ef7e0675.js",
+    "static/media/video-tv.m4v": "/static/media/video-tv.053994fc9a5da7a97b5b.m4v",
+    "static/media/kid-3.png": "/static/media/kid-3.e93820cb7c2a2691baf7.png",
+    "static/media/background.jpg": "/static/media/background.e87c8284e5583e41c29e.jpg",
+    "static/media/watch-every-where.png": "/static/media/watch-every-where.8e6539e8bfc6937a0648.png",
+    "static/media/2nd-box.jpg": "/static/media/2nd-box.063578d5b6d5ab4155ec.jpg",
+    "static/media/net.png": "/static/media/net.774e8c1632ac9433608b.png",
+    "static/media/tv-img.png": "/static/media/tv-img.0049bc70babc1f94cf88.png",
+    "index.html": "/index.html",
+    "main.93dea07b.css.map": "/static/css/main.93dea07b.css.map",
+    "main.ef7e0675.js.map": "/static/js/main.ef7e0675.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93dea07b.css",
+    "static/js/main.ef7e0675.js"
+  ]
+}

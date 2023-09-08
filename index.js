@@ -4,20 +4,30 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const router = require('./Routers/AuthRoutes');
-
+// const path = require('path');
 
 app.use(cors());
 
+// Serving the frontend
+// app.use(express.static(path.join(__dirname, "./client/build")));
+// app.get("*", (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, "./client/build/index.html"),
+//     function (err) {
+//       res.status(500).send(err);
+//     }
+//   );
+// });
 
 app.use(express.json());
 app.use(router);
 
 app.get('/', (req, res) => {
-  res.send("Deployed to Vercel")
-})
+  res.send("Deployed to Vercel");
+});
 
 // Connect to the MongoDB database
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = "mongodb+srv://crud-operation:crud-op123@cluster0.ismwkvb.mongodb.net/users";
 
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,

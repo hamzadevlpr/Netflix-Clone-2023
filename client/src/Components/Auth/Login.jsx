@@ -15,13 +15,13 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const url = "https://netflix-clone-end.vercel.app/login";
+    const url = "http://localhost:3001/login";
     console.log({ email, password });
     axios
       .post(url, { email, password })
       .then((res) => {
         toast.success("Login Successfull");
-        navigate("/videos");
+        navigate("/dashboard");
       })
       .catch((err) => {
         if (err.response && err.response.status === 401) {
