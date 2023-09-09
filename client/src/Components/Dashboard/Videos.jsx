@@ -112,7 +112,7 @@ const Videos = () => {
                   <Youtube className="w-6 h-6" /> <span className="font-semibold">Play</span>
                 </button>
                 <button className="py-2 btn-detail flex gap-3 justify-center items-center rounded-0" onClick={openModal}>
-                  <span className="font-semibold">More Detail</span> <Info className="w-5 h-5" />
+                  <span className="font-semibold color">More Detail</span> <Info className="w-5 h-5" />
                 </button>
               </div>
             </div>

@@ -5,6 +5,7 @@ import LogoImg from "../../assets/imgs/net.png";
 import { Play } from 'lucide-react';
 import trailer from '../../assets/videos/trailor.mp4';
 import { Context } from '../../Context/UserContext';
+import './Model.css'
 
 function Model({ closeModal, movie }) {
     const { showModel, videoId } = useContext(Context);
@@ -75,7 +76,7 @@ function Model({ closeModal, movie }) {
                                                 />
                                             </div>
                                             <div className="d-flex gap-3 sm:w-full">
-                                                <button className="flex gap-3 justify-center items-center py-2 rounded-xl px-5 my-2 bg-[#c7c4c4] text-black">
+                                                <button className="flex gap-3 justify-center items-center py-2 rounded-xl px-5 my-2 bg-[#c7c4c4] text-black btnClr" >
                                                     <Play className="w-6 h-6" /> <span className="font-bold">Play</span>
                                                 </button>
                                                 <button className="flex gap-3 justify-center items-center rounded-full my-2 border-2 text-black">
