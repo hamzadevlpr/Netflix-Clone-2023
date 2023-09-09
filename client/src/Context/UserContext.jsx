@@ -1,13 +1,14 @@
 import React, { createContext, useState } from 'react';
 
-export const UserContext = createContext();
+export const Context = createContext();
 
-export const UserProvider = ({ children }) => {
-    const [formData, setFormData] = useState([]);
+export const ContextProvider = ({ children }) => {
+    const [showModel, setShowModel] = useState(false);
+    const [videoId] = useState(667538);
 
     return (
-        <UserContext.Provider value={{ formData, setFormData }}>
+        <Context.Provider value={{ showModel, setShowModel, videoId }}>
             {children}
-        </UserContext.Provider>
+        </Context.Provider>
     );
 };

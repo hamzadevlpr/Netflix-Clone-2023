@@ -19,13 +19,14 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const url = "https://netflix-clone-end.vercel.app/register";
+    const url = "http://localhost:3001/register";
     console.log({ name, email, password });
 
     axios
       .post(url, { name, email, password })
       .then((res) => {
         console.log(res.data);
+        toast.success('User Registered Successfully');
         navigate("/login");
       })
       .catch((err) => {
@@ -45,64 +46,51 @@ function SignUp() {
   return (
     <div className="backContainerLog">
       <div className="overlayLog"></div>
-      <div>
+      <div className="navLog">
         <img src={LogoImg} alt="logo" style={logoStyle} />
+        <Link className="btnBack" to="/">
+          &rarr;
+        </Link>
       </div>
       <div className="loginMain">
         <div className="login">
           <h1 style={{ color: "white", textAlign: "left" }}>Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <div className="input-container">
-              <input
-                type="text"
-                name="name"
-                id="name"
+              <input type="text" name="name" id="name" required
                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
+                onChange={(e) => setName(e.target.value)} />
               <label className="active" htmlFor="name">
                 Name
               </label>
+              <p></p>
             </div>
             <div className="input-container">
-              <input
-                type="email"
-                name="email"
-                id="email"
+              <input type="email" name="email" id="email" required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+                onChange={(e) => setEmail(e.target.value)} />
               <label className="active" htmlFor="email">
                 Email
               </label>
+              <p></p>
             </div>
             <div className="input-container">
-              <input
-                type="password"
-                name="password"
-                id="password"
+              <input type="password" name="password" id="password" required
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+                onChange={(e) => setPassword(e.target.value)} />
               <label className="active" htmlFor="password">
                 Password
               </label>
-              <p>
-                <small>{forumError}</small>
-              </p>
+              <p></p>
             </div>
-            <button className="btn btn-primary" type="submit">
-              {btnloading ? <ClipLoader size={20} color='#fff' /> : 'Sign up'}
-            </button>
-            <br />
+            <button className="btn btn-primary">
+              {btnloading ? <ClipLoader size={20} color='#fff' /> : 'Signup'}
+            </button> <br />
             <br />
             <Link to="/login" className="signupButton">
               <small>
-                <span className="span1">Already have an account? </span>{" "}
-                <span className="span2">Sign In Here!</span>
+                <span className="span1">New to Netflix? </span>{" "}
+                <span className="span2">Sign Up Here!</span>
               </small>
             </Link>
           </form>
