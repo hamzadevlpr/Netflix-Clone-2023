@@ -538,11 +538,14 @@
   overflow: hidden;
   margin-right: 0;
   position: relative;
-  aspect-ratio: video;
+  /* aspect-ratio: video; */
 }
-
+.bg-black {
+  background-color: #000;
+}
 /* Gradient overlay */
 .gradient-overlay {
+  z-index: 10 !important;
   position: absolute;
   top: 5rem;
   left: 20px;

@@ -6,7 +6,7 @@ import { Play } from 'lucide-react';
 import trailer from '../../assets/videos/trailor.mp4';
 import { Context } from '../../Context/UserContext';
 
-function Model({ closeModal, movie }) { // Pass closeModal as a prop
+function Model({ closeModal, movie }) {
     const { showModel, videoId } = useContext(Context);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -17,8 +17,6 @@ function Model({ closeModal, movie }) { // Pass closeModal as a prop
 
     useEffect(() => {
         const apiKey = "ca258fa0adb338022b74848eb9dade0a";
-        const videoUrl = `https://api.themoviedb.org/3/movie/${videoId}/videos?api_key=${apiKey}&language=en-US`;
-
         axios.get(`https://api.themoviedb.org/3/movie/${videoId}?api_key=${apiKey}&language=en-US`)
             .then(response => {
                 setMovieData(response.data);
@@ -33,7 +31,7 @@ function Model({ closeModal, movie }) { // Pass closeModal as a prop
         <>
             {showModel && (
                 <div
-                    className="Overlay relative inset-0 overflow-y-auto"
+                    className="Overlay relative inset-0 overflow-y-auto modal-container glass-effect"
                     aria-labelledby="modal-title"
                     role="dialog"
                     aria-modal="true"
@@ -43,9 +41,7 @@ function Model({ closeModal, movie }) { // Pass closeModal as a prop
                     >
                         <div className="fixed inset-0 bg-black opacity-50"></div>
                         <div className="transition-opacity ease-out duration-300 fixed inset-0 z-20 flex items-center justify-center">
-
-                            <div className="overflow-y-auto model-bg rounded-lg max-h-[40rem]">
-
+                            <div className="overflow-y-auto rounded-lg max-h-[40rem]">
                                 <div className="relative">
                                     <div className="absolute top-3 right-3 z-50">
                                         <button onClick={closeModal} className='cursor-pointer'>
@@ -69,7 +65,7 @@ function Model({ closeModal, movie }) { // Pass closeModal as a prop
 
                                 {movieData && (
                                     <>
-                                        <div className="text-white p-3 text-left">
+                                        <div className="text-white p-3 text-left model-bg">
                                             <div className="flex items-center gap-3">
                                                 <h2 className="text-3xl font-bold uppercase overflow-hidden">{movieData.title}</h2>
                                                 <img

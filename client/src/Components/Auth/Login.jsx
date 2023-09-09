@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import LogoImg from "../../assets/imgs/net.png";
 import { Link, useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Context } from '../../Context/UserContext';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const { setLogin } = useContext(Context);
   // Sign in Button Loading
   const navigate = useNavigate();
   const [btnloading, setLoading] = useState(false);
@@ -20,6 +21,7 @@ function Login() {
     axios
       .post(url, { email, password })
       .then((res) => {
+        setLogin(true);
         toast.success("Login Successfull");
         navigate("/dashboard");
       })

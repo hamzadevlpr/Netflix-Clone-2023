@@ -4,12 +4,13 @@ import LogoImg from "../../assets/imgs/net.png";
 import Model from './Model';
 import './Slider.css'
 import { Context } from '../../Context/UserContext';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Videos = () => {
   const apiKey = 'ca258fa0adb338022b74848eb9dade0a'; // Use environment variable
   // const movieId = 667538;
   const [movie, setMovie] = useState();
-  const { showModel, setShowModel, videoId } = useContext(Context);
+  const { showModel, setShowModel, videoId, login } = useContext(Context);
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${videoId}?api_key=${apiKey}&language=en-US`;
 
@@ -24,7 +25,12 @@ const Videos = () => {
   }, [apiKey, videoId]);
 
   if (!movie) {
-    return <div>Loading...</div>; // Show a loading message while fetching data
+    return <div className='flex justify-center cliploader'>
+      <ClipLoader
+        color="rgb(193, 17, 25)"
+        size={80}
+      />
+    </div>; // Show a loading message while fetching data
   }
 
   const backgroundStyle = {
@@ -56,7 +62,7 @@ const Videos = () => {
       )}
       <div className="movie-page" style={backgroundStyle}>
         <div className="gradient-overlay">
-          <div className="movie-poster">
+          <div className="movie-poster video-container">
             <div className="flex gap-3 flex-col ml-5">
               <div className="flex gap-3 items-center">
                 <img
@@ -113,8 +119,6 @@ const Videos = () => {
           </div>
         </div>
       </div>
-
-
 
     </>
   );

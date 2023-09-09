@@ -1,7 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:200);
 
+.slider {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    justify-content: center;
+    row-gap: 20px;
+}
+
 .snip1577 {
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: 'poppins', Arial, sans-serif;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -121,4 +129,47 @@
 .snip1577.hover .h4 {
     -webkit-transition-delay: 0.35s;
     transition-delay: 0.35s;
+}
+
+/* Add this to your CSS or import a separate CSS file */
+.modal-container {
+    z-index: 999;
+    /* Adjust the z-index value as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background overlay */
+}
+
+.video-container {
+    z-index: 1;
+    /* Lower z-index value than the modal */
+    position: relative;
+}
+
+/* Add this to your CSS or import a separate CSS file */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(5px);
+    /* Apply a blur effect */
+    border-radius: 8px;
+    /* Adjust the border-radius as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add a subtle shadow */
+}
+.model-bg{
+    background-color: #000;
+    opacity: 0.6;
+    z-index: -999;
+}
+.cliploader{
+    height: 99vh;
+    align-items: center;
 }

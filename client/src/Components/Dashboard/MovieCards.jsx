@@ -1,12 +1,9 @@
 import axios from 'axios';
-import React, { useState, useEffect, useRef } from 'react';
-import Slider from 'react-slick';
-import './Slider.css';
+import { useState, useEffect, useRef } from 'react';
 
 const MovieCards = () => {
     const [movies, setMovies] = useState([]);
     const [hoveredIndexes, setHoveredIndexes] = useState([]);
-    const currentSlideRef = useRef(null);
 
     useEffect(() => {
         const apiKey = "ca258fa0adb338022b74848eb9dade0a"; // Replace with your API key
@@ -25,31 +22,6 @@ const MovieCards = () => {
             });
     }, []);
 
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 1000,
-        adaptiveHeight: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
-
     const handleMouseEnter = (index) => {
         // Update the hover state for the specific movie card
         const newHoveredIndexes = [...hoveredIndexes];
@@ -65,12 +37,13 @@ const MovieCards = () => {
     };
 
     return (
-        <div className="">
-            <Slider {...settings} ref={currentSlideRef}>
+        <>
+            <h1 className="text-4xl font-bold movie-title pl-10 pt-5 overflow-hidden">Random Movies</h1>
+            <div className="slider">
                 {movies.map((movie, index) => (
                     <figure
                         key={index}
-                        className={`border border-gray-700 snip1577 rounded-xl shadow-2xl ${hoveredIndexes[index] ? 'hover' : ''}`}
+                        className={`snip1577 rounded-xl  ${hoveredIndexes[index] ? 'hover' : ''}`}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={() => handleMouseLeave(index)}
                     >
@@ -79,13 +52,13 @@ const MovieCards = () => {
                             alt={`Slide ${index + 1}`}
                         />
                         <figcaption>
-                            <h3 className='overflow-hidden'>{movie.title}</h3>
+                            <h3 className=''>{movie.title}</h3>
                             <div className="flex gap-1 items-center h4">
                                 <div className="flex items-center justify-center gap-2">
                                     <img className='opacity-100' width="30" height="30" src="https://img.icons8.com/color/30/imdb.png" alt="imdb" />
                                 </div>
                                 <div className="flex items-center justify-center gap-2">
-                                    <span className="text-sm font-normal  overflow-hidden">{movie.vote_average.toFixed(1)} / 10</span>
+                                    <span className="text-sm font-normal">{movie.vote_average.toFixed(1)} / 10</span>
                                 </div>
                             </div>
 
@@ -93,8 +66,8 @@ const MovieCards = () => {
                         <a href="#" />
                     </figure>
                 ))}
-            </Slider>
-        </div>
+            </div>
+        </>
     );
 };
 

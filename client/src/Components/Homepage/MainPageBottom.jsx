@@ -2,7 +2,6 @@ import React from "react";
 import TvLogo from "../../assets/imgs/tv-img.png";
 import GirlImg from "../../assets/imgs/2nd-box.jpg";
 import ThreeKid from "../../assets/imgs/kid-3.png";
-import watchPic from "../../assets/imgs/watch-every-where.png";
 import { Accordion } from "react-bootstrap";
 import BackgroundVideo from "../../assets/videos/video-tv.m4v";
 

@@ -6,6 +6,7 @@ import Login from "./Components/Auth/Login";
 import SignUp from "./Components/Auth/SignUp";
 import Dashboard from './Components/Dashboard/Dashboard'
 import { ContextProvider } from "./Context/UserContext";
+import ErrorPage from "./ErrorPage";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/*" element={<ErrorPage title="we are sorry, but the page you requested was not found" />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
         </Routes>
         <ToastContainer
           pauseOnHover={false}
