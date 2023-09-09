@@ -25,7 +25,7 @@ function MainPageBottom() {
                 <img src={TvLogo} alt="tvImage" className="tv-image" />
                 <div className="video-wrapper">
                   <video autoPlay loop muted className="background-video">
-                    <source src={BackgroundVideo} type="video/mp4" />
+                    <source src='https://netflix-images.manikantp.repl.co/Netflix1.gif' type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
