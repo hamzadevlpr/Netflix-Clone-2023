@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
@@ -117,4 +117,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 Enjoy using the Netflix Clone App! If you have any questions or encounter any issues, please feel free to open an issue or contact us. Thank you for using our app!
 
->>>>>>> 11d03bcc1e3a95d64d86ed149f4919de11eab9c5
