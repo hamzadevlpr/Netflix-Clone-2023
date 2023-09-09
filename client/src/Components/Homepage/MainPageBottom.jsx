@@ -58,7 +58,7 @@ function MainPageBottom() {
                 <img src={TvLogo} alt="tvImage" className="tv-image" />
                 <div className="video-wrapper watch-wrapper">
                   <video autoPlay loop muted className="background-video">
-                    <source src={BackgroundVideo} type="video/mp4" />
+                    <source src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png' type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
